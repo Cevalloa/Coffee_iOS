@@ -12,6 +12,7 @@
 		CC4D5B581AB2394400A4EFEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4D5B571AB2394400A4EFEE /* Images.xcassets */; };
 		CC4D5B671AB2394400A4EFEE /* CoffeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B661AB2394400A4EFEE /* CoffeeTests.m */; };
 		CC4D5B761AB23A8A00A4EFEE /* CoffeeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */; };
+		CC4D5B7D1AB24DC400A4EFEE /* NetworkConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B7C1AB24DC400A4EFEE /* NetworkConnectivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		CC4D5B661AB2394400A4EFEE /* CoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeTests.m; sourceTree = "<group>"; };
 		CC4D5B741AB23A8A00A4EFEE /* CoffeeListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeListTableViewController.h; sourceTree = "<group>"; };
 		CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeListTableViewController.m; sourceTree = "<group>"; };
+		CC4D5B7B1AB24DC400A4EFEE /* NetworkConnectivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConnectivity.h; sourceTree = "<group>"; };
+		CC4D5B7C1AB24DC400A4EFEE /* NetworkConnectivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkConnectivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,8 @@
 			children = (
 				CC4D5B741AB23A8A00A4EFEE /* CoffeeListTableViewController.h */,
 				CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */,
-				CC4D5B491AB2394300A4EFEE /* Coffee */,
+				CC4D5B771AB2452600A4EFEE /* Modal/ Networking layer */,
+				CC4D5B491AB2394300A4EFEE /* AppDelegate & Supporting Files */,
 				CC4D5B631AB2394400A4EFEE /* CoffeeTests */,
 				CC4D5B481AB2394300A4EFEE /* Products */,
 			);
@@ -76,7 +80,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC4D5B491AB2394300A4EFEE /* Coffee */ = {
+		CC4D5B491AB2394300A4EFEE /* AppDelegate & Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				CC4D5B4E1AB2394400A4EFEE /* AppDelegate.h */,
@@ -84,6 +88,7 @@
 				CC4D5B571AB2394400A4EFEE /* Images.xcassets */,
 				CC4D5B4A1AB2394300A4EFEE /* Supporting Files */,
 			);
+			name = "AppDelegate & Supporting Files";
 			path = Coffee;
 			sourceTree = "<group>";
 		};
@@ -111,6 +116,15 @@
 				CC4D5B651AB2394400A4EFEE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC4D5B771AB2452600A4EFEE /* Modal/ Networking layer */ = {
+			isa = PBXGroup;
+			children = (
+				CC4D5B7B1AB24DC400A4EFEE /* NetworkConnectivity.h */,
+				CC4D5B7C1AB24DC400A4EFEE /* NetworkConnectivity.m */,
+			);
+			name = "Modal/ Networking layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,7 @@
 				CC4D5B501AB2394400A4EFEE /* AppDelegate.m in Sources */,
 				CC4D5B761AB23A8A00A4EFEE /* CoffeeListTableViewController.m in Sources */,
 				CC4D5B4D1AB2394400A4EFEE /* main.m in Sources */,
+				CC4D5B7D1AB24DC400A4EFEE /* NetworkConnectivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

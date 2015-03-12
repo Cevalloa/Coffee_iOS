@@ -7,7 +7,24 @@
 //
 
 #import "CoffeeListTableViewController.h"
+#import "NetworkConnectivity.h"
+
+@interface CoffeeListTableViewController()
+
+@property (nonatomic) NetworkConnectivity *instanceNetworkConnectivity;
+
+@end
 
 @implementation CoffeeListTableViewController
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];
+    [self.instanceNetworkConnectivity methodGetCoffeeList];
+
+
+}
+
 
 @end
