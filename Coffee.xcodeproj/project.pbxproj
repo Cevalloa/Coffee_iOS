@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		CC4D5B4D1AB2394400A4EFEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B4C1AB2394300A4EFEE /* main.m */; };
 		CC4D5B501AB2394400A4EFEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B4F1AB2394400A4EFEE /* AppDelegate.m */; };
-		CC4D5B531AB2394400A4EFEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B521AB2394400A4EFEE /* ViewController.m */; };
-		CC4D5B561AB2394400A4EFEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4D5B541AB2394400A4EFEE /* Main.storyboard */; };
 		CC4D5B581AB2394400A4EFEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4D5B571AB2394400A4EFEE /* Images.xcassets */; };
-		CC4D5B5B1AB2394400A4EFEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC4D5B591AB2394400A4EFEE /* LaunchScreen.xib */; };
 		CC4D5B671AB2394400A4EFEE /* CoffeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B661AB2394400A4EFEE /* CoffeeTests.m */; };
+		CC4D5B761AB23A8A00A4EFEE /* CoffeeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +30,12 @@
 		CC4D5B4C1AB2394300A4EFEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC4D5B4E1AB2394400A4EFEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC4D5B4F1AB2394400A4EFEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC4D5B511AB2394400A4EFEE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CC4D5B521AB2394400A4EFEE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC4D5B551AB2394400A4EFEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC4D5B571AB2394400A4EFEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CC4D5B5A1AB2394400A4EFEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CC4D5B601AB2394400A4EFEE /* CoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4D5B651AB2394400A4EFEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC4D5B661AB2394400A4EFEE /* CoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeTests.m; sourceTree = "<group>"; };
+		CC4D5B741AB23A8A00A4EFEE /* CoffeeListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeListTableViewController.h; sourceTree = "<group>"; };
+		CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +59,8 @@
 		CC4D5B3E1AB2394300A4EFEE = {
 			isa = PBXGroup;
 			children = (
+				CC4D5B741AB23A8A00A4EFEE /* CoffeeListTableViewController.h */,
+				CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */,
 				CC4D5B491AB2394300A4EFEE /* Coffee */,
 				CC4D5B631AB2394400A4EFEE /* CoffeeTests */,
 				CC4D5B481AB2394300A4EFEE /* Products */,
@@ -83,11 +81,7 @@
 			children = (
 				CC4D5B4E1AB2394400A4EFEE /* AppDelegate.h */,
 				CC4D5B4F1AB2394400A4EFEE /* AppDelegate.m */,
-				CC4D5B511AB2394400A4EFEE /* ViewController.h */,
-				CC4D5B521AB2394400A4EFEE /* ViewController.m */,
-				CC4D5B541AB2394400A4EFEE /* Main.storyboard */,
 				CC4D5B571AB2394400A4EFEE /* Images.xcassets */,
-				CC4D5B591AB2394400A4EFEE /* LaunchScreen.xib */,
 				CC4D5B4A1AB2394300A4EFEE /* Supporting Files */,
 			);
 			path = Coffee;
@@ -199,8 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC4D5B561AB2394400A4EFEE /* Main.storyboard in Resources */,
-				CC4D5B5B1AB2394400A4EFEE /* LaunchScreen.xib in Resources */,
 				CC4D5B581AB2394400A4EFEE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC4D5B531AB2394400A4EFEE /* ViewController.m in Sources */,
 				CC4D5B501AB2394400A4EFEE /* AppDelegate.m in Sources */,
+				CC4D5B761AB23A8A00A4EFEE /* CoffeeListTableViewController.m in Sources */,
 				CC4D5B4D1AB2394400A4EFEE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,25 +234,6 @@
 			targetProxy = CC4D5B611AB2394400A4EFEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CC4D5B541AB2394400A4EFEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC4D5B551AB2394400A4EFEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CC4D5B591AB2394400A4EFEE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC4D5B5A1AB2394400A4EFEE /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CC4D5B681AB2394400A4EFEE /* Debug */ = {
@@ -344,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Coffee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Coffee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

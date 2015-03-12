@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CoffeeListTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CoffeeListTableViewController *instanceCoffeeListTVC = [CoffeeListTableViewController new];
+    UINavigationController *navigationControllerForApp = [[UINavigationController alloc] initWithRootViewController:instanceCoffeeListTVC];
+    
+    //Bar Hexadecimal is F16421
+    navigationControllerForApp.navigationBar.barTintColor = [UIColor colorWithRed:241.0f/255.0f green:100.0f/255.0f blue:33.0f/255.0f alpha:1];
+    navigationControllerForApp.navigationBar.translucent = NO;
+    self.window.rootViewController = navigationControllerForApp;
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
