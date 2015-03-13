@@ -60,6 +60,7 @@
                 completion(nil);
             }
             
+
             completion(arrayOfCoffees);
         });
 

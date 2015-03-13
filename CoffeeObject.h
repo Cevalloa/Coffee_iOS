@@ -13,6 +13,7 @@
 
 @interface CoffeeObject : MTLModel <MTLJSONSerializing>
 
+//Mantle reads turns JSON into these objects
 @property (nonatomic) NSString *stringCoffeeName;
 @property (nonatomic) NSString *stringCoffeeDescription;
 @property (nonatomic) NSURL *urlCoffeeImage;
