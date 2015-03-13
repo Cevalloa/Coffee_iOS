@@ -7,6 +7,7 @@
 //
 
 #import "NetworkConnectivity.h"
+#import "CoffeeObject.h"
 
 @interface NetworkConnectivity()
 
@@ -44,14 +45,31 @@
 }
 
 #pragma mark - Web Server Data Retrieval Methods
--(void)methodGetCoffeeList{
+-(void)methodGetCoffeeList:(void(^) (NSArray *))completion{
     NSURL *url = [[NSURL alloc] initWithString:@"https://coffeeapi.percolate.com/api/coffee/"];
 
     [[self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *dictionaryWithData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+        NSArray *dictionaryWithData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+        NSArray *arrayOfCoffees = [MTLJSONAdapter modelsOfClass:[CoffeeObject class] fromJSONArray:dictionaryWithData error:&error];
         
-        NSLog(@"Returned data %@", dictionaryWithData);
-        NSLog(@"Returned response %@", response);
+        //Place back on main thread, in order to update UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error){
+                completion(nil);
+            }
+            
+            completion(arrayOfCoffees);
+        });
+
+
+        //Use for debugging
+//        NSLog(@"Returned data %@", arrayOfCoffees);
+//        NSLog(@"Returned response %@", response);
+        
+       
+        
         
     }] resume];
     

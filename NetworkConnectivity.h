@@ -14,7 +14,7 @@
 +(instancetype)methodCreateInstanceWithHTTPAuthorization;
 
 #pragma mark - Web Server Data Retrieval Methods
--(void)methodGetCoffeeList;
+-(void)methodGetCoffeeList:(void(^)(NSArray *arrayWithCoffeeObjects))completion;
 
 
 @end

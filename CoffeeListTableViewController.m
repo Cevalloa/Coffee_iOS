@@ -21,7 +21,12 @@
     [super viewDidLoad];
     
     self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];
-    [self.instanceNetworkConnectivity methodGetCoffeeList];
+    
+    //Retrieves & Parses JSON on back thread, returns data on main thread
+    [self.instanceNetworkConnectivity methodGetCoffeeList:^(NSArray *arrayWithCoffeeObjects) {
+        
+        NSLog(@"%@", arrayWithCoffeeObjects);
+    }];
 
 
 }
