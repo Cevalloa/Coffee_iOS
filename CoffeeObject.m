@@ -16,13 +16,9 @@
     
     return @{@"stringCoffeeName" : @"name",
              @"stringCoffeeDescription" : @"desc",
-             @"urlCoffeeImage" : @"image_url",
+             @"stringUrlCoffeeImage" : @"image_url",
              @"stringCoffeeID" : @"id",
              };
-}
-
-+(NSValueTransformer *)appURLSchemeJSONTransformer{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 

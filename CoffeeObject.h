@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import "MTLModel.h"
 #import "MTLJSONAdapter.h"
@@ -16,8 +17,11 @@
 //Mantle reads turns JSON into these objects
 @property (nonatomic) NSString *stringCoffeeName;
 @property (nonatomic) NSString *stringCoffeeDescription;
-@property (nonatomic) NSURL *urlCoffeeImage;
+@property (nonatomic) NSString *stringUrlCoffeeImage;
 @property (nonatomic) NSString *stringCoffeeID;
+
+//Used to store the current object's image
+@property (nonatomic) UIImage *imageOfCoffee;
 
 
 @end

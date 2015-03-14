@@ -66,15 +66,44 @@
 
 
         //Use for debugging
-//        NSLog(@"Returned data %@", arrayOfCoffees);
+//        NSLog(@"Returned data %@", dictionaryWithData);
 //        NSLog(@"Returned response %@", response);
-        
-       
-        
-        
+   
     }] resume];
     
     
 }
+
+#pragma mark - Media Retrieval Methods
+-(void)methodReturnImage:(NSString *)stringLinkingToImage completion:(void(^)(UIImage *))completion{
+
+    if(stringLinkingToImage == nil){
+        return;
+    }
+    
+    NSURL *url = [[NSURL alloc] initWithString:stringLinkingToImage];
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *data  = [[NSData alloc] initWithContentsOfURL:location];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(image);
+        });
+        
+        
+        
+    }];
+    
+    [task resume];
+    
+}
+
+
+
+
+
 
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoffeeObject.h"
 
 @interface CoffeeCustomTableViewCell : UITableViewCell
+
+
+-(void)setupAll:(CoffeeObject *)coffeeObjectPassedIn;
 
 @end

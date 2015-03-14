@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NetworkConnectivity : NSObject
 
@@ -15,6 +16,9 @@
 
 #pragma mark - Web Server Data Retrieval Methods
 -(void)methodGetCoffeeList:(void(^)(NSArray *arrayWithCoffeeObjects))completion;
+
+#pragma mark - Media Retrieval Methods
+-(void)methodReturnImage:(NSString *)stringLinkingToImage completion:(void(^)(UIImage *))completion;
 
 
 @end

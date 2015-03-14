@@ -10,7 +10,9 @@
 #import "CoffeeCustomTableViewCell.h"
 #import "NetworkConnectivity.h"
 
-@interface CoffeeListTableViewController()
+@interface CoffeeListTableViewController() {
+    NSArray *arrayWithReturnedCoffeeObjects;
+}
 
 @property (nonatomic) NetworkConnectivity *instanceNetworkConnectivity;
 
@@ -19,31 +21,35 @@
 @implementation CoffeeListTableViewController
 
 #pragma mark - View Controller Lifecycle Methods
--(void)viewDidLoad{
-    [super viewDidLoad];
-    
-    //Class method that connects API key for server authorization
- //   self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];
-    
-    //Retrieves & Parses JSON on back thread, returns data on main thread
-//    [self.instanceNetworkConnectivity methodGetCoffeeList:^(NSArray *arrayWithCoffeeObjects) {
-//        NSLog(@"%@", arrayWithCoffeeObjects);
-//    }];
+-(void)viewWillAppear:(BOOL)animated{
+    // Class method that connects API key for server authorization
+    self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];
     [self.tableView registerClass:[CoffeeCustomTableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    // Retrieves & Parses JSON on back thread, returns data on main thread
+    [self.instanceNetworkConnectivity methodGetCoffeeList:^(NSArray *arrayWithCoffeeObjects) {
+        NSLog(@"%@", arrayWithCoffeeObjects);
+        arrayWithReturnedCoffeeObjects =arrayWithCoffeeObjects;
+        [self.tableView reloadData];
+        
+    }];
 
+    
 }
 
 #pragma mark - Table View Cell DataSource Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CoffeeCustomTableViewCell *tableViewCellCustom = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    if(!tableViewCellCustom){
+    CoffeeCustomTableViewCell *tableViewCellCustom = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    tableViewCellCustom.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (tableViewCellCustom == nil){
         tableViewCellCustom = [[CoffeeCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    [tableViewCellCustom setupAll:arrayWithReturnedCoffeeObjects[indexPath.row]];
+
     return tableViewCellCustom;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return [arrayWithReturnedCoffeeObjects count];
 }
 
 #pragma mark - Table View Cell Delegate Methods
