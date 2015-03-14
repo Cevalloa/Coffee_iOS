@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoffeeObject.h"
+@class CoffeeObject;
 
 @interface CoffeeCustomTableViewCell : UITableViewCell
 
+#pragma mark - Table View Cell Creation Methods
+-(void)methodSetupAll:(CoffeeObject *)coffeeObjectPassedIn;
 
--(void)setupAll:(CoffeeObject *)coffeeObjectPassedIn;
+-(CGFloat)methodReturnTableViewCellSize:(CoffeeObject *)coffeeObjectToDetermineSize;
 
 @end
