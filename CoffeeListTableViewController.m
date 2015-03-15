@@ -7,9 +7,10 @@
 //
 
 #import "CoffeeListTableViewController.h"
+#import "CoffeeDetailViewController.h"
 #import "CoffeeCustomTableViewCell.h"
-#import "CoffeeObject.h"
 #import "NetworkConnectivity.h"
+#import "CoffeeObject.h"
 
 @interface CoffeeListTableViewController() {
     NSArray *arrayWithReturnedCoffeeObjects;
@@ -77,6 +78,13 @@
     return [tvcC methodReturnTableViewCellSize:arrayWithReturnedCoffeeObjects[indexPath.row]];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CoffeeDetailViewController *coffeeObjectDetailViewController = [CoffeeDetailViewController methodCreateDetailViewControllerWithObject:arrayWithReturnedCoffeeObjects[indexPath.row]];
+    
+    [self.navigationController pushViewController:coffeeObjectDetailViewController animated:YES];
+    
+    
+}
 
 
 

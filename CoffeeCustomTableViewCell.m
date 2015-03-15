@@ -47,6 +47,7 @@
     [self methodAddTableViewCellSubviews];
 }
 
+//Adds the table view cell's subviews
 -(void)methodAddTableViewCellSubviews{
     
     self.labelTitle = [UILabel new];

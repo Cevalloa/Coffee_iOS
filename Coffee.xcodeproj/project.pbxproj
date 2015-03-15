@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC09AA191AB260E300AFED12 /* CoffeeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CC09AA181AB260E300AFED12 /* CoffeeObject.m */; };
 		CC09AA1C1AB292C700AFED12 /* CoffeeCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC09AA1B1AB292C700AFED12 /* CoffeeCustomTableViewCell.m */; };
+		CC09AA211AB507F200AFED12 /* CoffeeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC09AA201AB507F100AFED12 /* CoffeeDetailViewController.m */; };
 		CC4D5B4D1AB2394400A4EFEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B4C1AB2394300A4EFEE /* main.m */; };
 		CC4D5B501AB2394400A4EFEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D5B4F1AB2394400A4EFEE /* AppDelegate.m */; };
 		CC4D5B581AB2394400A4EFEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4D5B571AB2394400A4EFEE /* Images.xcassets */; };
@@ -36,6 +37,8 @@
 		CC09AA181AB260E300AFED12 /* CoffeeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeObject.m; sourceTree = "<group>"; };
 		CC09AA1A1AB292C700AFED12 /* CoffeeCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeCustomTableViewCell.h; sourceTree = "<group>"; };
 		CC09AA1B1AB292C700AFED12 /* CoffeeCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeCustomTableViewCell.m; sourceTree = "<group>"; };
+		CC09AA1F1AB507F100AFED12 /* CoffeeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeDetailViewController.h; sourceTree = "<group>"; };
+		CC09AA201AB507F100AFED12 /* CoffeeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeDetailViewController.m; sourceTree = "<group>"; };
 		CC4D5B471AB2394300A4EFEE /* Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4D5B4B1AB2394300A4EFEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC4D5B4C1AB2394300A4EFEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,13 +91,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CC4D5B3E1AB2394300A4EFEE = {
+		CC09AA1D1AB5066F00AFED12 /* Table View Classes */ = {
 			isa = PBXGroup;
 			children = (
 				CC4D5B741AB23A8A00A4EFEE /* CoffeeListTableViewController.h */,
 				CC4D5B751AB23A8A00A4EFEE /* CoffeeListTableViewController.m */,
 				CC09AA1A1AB292C700AFED12 /* CoffeeCustomTableViewCell.h */,
 				CC09AA1B1AB292C700AFED12 /* CoffeeCustomTableViewCell.m */,
+			);
+			name = "Table View Classes";
+			sourceTree = "<group>";
+		};
+		CC09AA1E1AB5068300AFED12 /* Detail View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CC09AA1F1AB507F100AFED12 /* CoffeeDetailViewController.h */,
+				CC09AA201AB507F100AFED12 /* CoffeeDetailViewController.m */,
+			);
+			name = "Detail View Classes";
+			sourceTree = "<group>";
+		};
+		CC4D5B3E1AB2394300A4EFEE = {
+			isa = PBXGroup;
+			children = (
+				CC09AA1D1AB5066F00AFED12 /* Table View Classes */,
+				CC09AA1E1AB5068300AFED12 /* Detail View Classes */,
 				CC4D5B771AB2452600A4EFEE /* Modal/ Networking layer */,
 				CC4D5B491AB2394300A4EFEE /* AppDelegate & Supporting Files */,
 				CC4D5B631AB2394400A4EFEE /* CoffeeTests */,
@@ -301,6 +322,7 @@
 				CC09AA1C1AB292C700AFED12 /* CoffeeCustomTableViewCell.m in Sources */,
 				CC09AA191AB260E300AFED12 /* CoffeeObject.m in Sources */,
 				CC4D5B4D1AB2394400A4EFEE /* main.m in Sources */,
+				CC09AA211AB507F200AFED12 /* CoffeeDetailViewController.m in Sources */,
 				CC4D5B7D1AB24DC400A4EFEE /* NetworkConnectivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
