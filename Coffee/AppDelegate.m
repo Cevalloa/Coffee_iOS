@@ -26,6 +26,10 @@
     //Bar Hexadecimal is F16421
     navigationControllerForApp.navigationBar.barTintColor = [UIColor colorWithRed:241.0f/255.0f green:100.0f/255.0f blue:33.0f/255.0f alpha:1];
     navigationControllerForApp.navigationBar.translucent = NO;
+    navigationControllerForApp.navigationBar.tintColor = [UIColor whiteColor];
+    
+    navigationControllerForApp.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo"]];
+    
     self.window.rootViewController = navigationControllerForApp;
     [self.window makeKeyAndVisible];
     

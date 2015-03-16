@@ -25,9 +25,10 @@
 
 #pragma mark - Table View Cell Creation Methods
 //Called automatically by cell creation
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withObject:(CoffeeObject *)coffeeObjectPassedIn{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
+        [self methodSetupAll:coffeeObjectPassedIn];
     }
     
     
@@ -47,6 +48,7 @@
     [self methodAddTableViewCellSubviews];
 }
 
+#pragma mark - View Creation Methods
 //Adds the table view cell's subviews
 -(void)methodAddTableViewCellSubviews{
     
@@ -77,10 +79,12 @@
     self.imageOfCoffeeInTableViewCell.translatesAutoresizingMaskIntoConstraints = NO;
     
     
-    //Debugging
-    self.labelTitle.backgroundColor = [UIColor greenColor];
-    self.labelShortDescription.backgroundColor = [UIColor redColor];
-    self.imageOfCoffeeInTableViewCell.backgroundColor = [UIColor purpleColor];
+    //Debugging for autolayout
+//    self.labelTitle.backgroundColor = [UIColor greenColor];
+//    self.labelShortDescription.backgroundColor = [UIColor redColor];
+//    self.imageOfCoffeeInTableViewCell.backgroundColor = [UIColor purpleColor];
+//    self.contentView.backgroundColor = [UIColor yellowColor];
+
     
     if (self.imageOfCoffeeInTableViewCell.image == nil){
         NetworkConnectivity *networkConnectivity = [NetworkConnectivity new];
@@ -100,7 +104,6 @@
         self.imageOfCoffeeInTableViewCell.image = coffeeObjectCurrentlyInUseByEntireClass.imageOfCoffee;
         
     }
-    self.contentView.backgroundColor = [UIColor yellowColor];
     
     [self.contentView addSubview:self.labelTitle];
     [self.contentView addSubview:self.labelShortDescription];
@@ -130,7 +133,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(20)-[_labelTitle]-(20)-|"
                                                                  options:0 metrics:nil views:dictionaryOfViews]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(20)-[_labelShortDescription]-(40)-|" options:0 metrics:nil views:dictionaryOfViews]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(20)-[_imageOfCoffeeInTableViewCell]-(30)-|" options:0 metrics:nil views:dictionaryOfViews]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(0)-[_imageOfCoffeeInTableViewCell]-(20)-|" options:0 metrics:nil views:dictionaryOfViews]];
     
 }
 

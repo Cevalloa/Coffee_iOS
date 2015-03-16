@@ -16,4 +16,6 @@
 
 -(CGFloat)methodReturnTableViewCellSize:(CoffeeObject *)coffeeObjectToDetermineSize;
 
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withObject:(CoffeeObject *)coffeeObjectPassedIn;
+
 @end

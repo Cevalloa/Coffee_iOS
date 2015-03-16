@@ -52,11 +52,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //Adds the logo on the top
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo"]];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     //Creates Bar Button Item In Navigation Bar
     [self methodCreateBarButtonItem];
     
+    //Creates the views in the navigation controller
+    [self methodCreateAllViews];
+    
+    //Sets the constraints for the views created
+    [self methodAddConstraints];
+
+}
+
+#pragma mark - View Creation Methods
+-(void)methodCreateAllViews{
     //Sets Title label color to #666666 (Gray - Dark) & Font family
     self.labelWithCoffeeTitle = [UILabel new];
     [self.labelWithCoffeeTitle setFont:[UIFont fontWithName:@"ArialMT" size:18.0f]];
@@ -64,7 +79,7 @@
     self.labelWithCoffeeTitle.translatesAutoresizingMaskIntoConstraints = NO;
     self.labelWithCoffeeTitle.text = coffeeObjectInUseByEntireClass.stringCoffeeName;
     [self.view addSubview:self.labelWithCoffeeTitle];
-
+    
     
     //Sets divider view color to #666666 (Gray - Dark)
     self.viewWithDivider = [UIView new];
@@ -82,7 +97,7 @@
     self.labelWithCoffeeDescription.text = coffeeObjectInUseByEntireClass.stringCoffeeDescription;
     [self.view addSubview:self.labelWithCoffeeDescription];
     
-
+    
     
     //If an image is passed in.. use that to fill the image (means there is an image)
     if (coffeeObjectInUseByEntireClass.imageOfCoffee != nil){
@@ -102,17 +117,13 @@
     self.labelDisplaysLastEdit.translatesAutoresizingMaskIntoConstraints = NO;
     self.labelDisplaysLastEdit.text = @"1 Week Ago"; //-> JSON feed doesn't return a last edit object
     [self.view addSubview:self.labelDisplaysLastEdit];
-    
-    //Sets the constraints for the views created
-    [self methodAddConstraints];
-
 }
 
-#pragma mark - UIBarButtonItem Methods
+
 //Creates UIBarButtonItem in iOS 7 =<
 -(void)methodCreateBarButtonItem{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(10,0,60,30);
+    button.frame = CGRectMake(10,0,70,30);
     [button setTitle:@"Share" forState:UIControlStateNormal];
     button.layer.borderColor = [UIColor whiteColor].CGColor;
     button.layer.borderWidth = 2.0f;

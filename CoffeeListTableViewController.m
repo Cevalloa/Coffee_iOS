@@ -14,7 +14,7 @@
 
 @interface CoffeeListTableViewController() {
     NSArray *arrayWithReturnedCoffeeObjects;
-    CoffeeCustomTableViewCell *tableViewCellCustom;
+    
 }
 
 @property (nonatomic) NetworkConnectivity *instanceNetworkConnectivity;
@@ -24,14 +24,23 @@
 @implementation CoffeeListTableViewController
 
 #pragma mark - View Controller Lifecycle Methods
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    [self.tableView registerClass:[CoffeeCustomTableViewCell class] forCellReuseIdentifier:@"cell"];
+
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    //Adds the logo on the top
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo"]];
     
     // Class method that connects API key for server authorization
     self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];
     
     //Registers class for table view
-    [self.tableView registerClass:[CoffeeCustomTableViewCell class] forCellReuseIdentifier:@"cell"];
     
     //Created weak reference to self (to use in block)
     __weak CoffeeListTableViewController *weakVersionOfThisClass = self;
@@ -53,15 +62,15 @@
 #pragma mark - Table View Cell DataSource Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    tableViewCellCustom = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    static NSString *cellIdentifier = @"cell";
+
+       CoffeeCustomTableViewCell *tableViewCellCustom = [[CoffeeCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier withObject:arrayWithReturnedCoffeeObjects[indexPath.row]];
+
     
-    //Prevents that weird grey appearance when cell is clicked
-    tableViewCellCustom.selectionStyle = UITableViewCellSelectionStyleNone;
+        //Prevents that weird grey appearance when cell is clicked
+    //tableViewCellCustom.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
-    if (tableViewCellCustom == nil){
-        tableViewCellCustom = [[CoffeeCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    [tableViewCellCustom methodSetupAll:arrayWithReturnedCoffeeObjects[indexPath.row]];
     return tableViewCellCustom;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -73,9 +82,9 @@
 
 #pragma mark - Table View Cell Delegate Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CoffeeCustomTableViewCell *tvcC = [CoffeeCustomTableViewCell new];
+    CoffeeCustomTableViewCell *coffeeCustomTableViewCellInstance = [CoffeeCustomTableViewCell new];
 
-    return [tvcC methodReturnTableViewCellSize:arrayWithReturnedCoffeeObjects[indexPath.row]];
+    return [coffeeCustomTableViewCellInstance methodReturnTableViewCellSize:arrayWithReturnedCoffeeObjects[indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,12 +94,6 @@
     
     
 }
-
-
-
-
-
-
 
 
 
