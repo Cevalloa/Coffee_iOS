@@ -24,8 +24,8 @@
 @implementation CoffeeListTableViewController
 
 #pragma mark - View Controller Lifecycle Methods
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:NO];
+-(void)viewDidLoad{
+    [super viewDidLoad];
     
     // Class method that connects API key for server authorization
     self.instanceNetworkConnectivity = [NetworkConnectivity methodCreateInstanceWithHTTPAuthorization];

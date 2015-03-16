@@ -61,7 +61,7 @@
     self.labelShortDescription = [UILabel new];
     
     //Sets color to #AAAAAA Gray
-    [self.labelShortDescription setTextColor:[UIColor grayColor]];
+    [self.labelShortDescription setTextColor:[UIColor colorWithRed:170.0f/255.0f green:170.0f/255.0f blue:170.0f/255.0f alpha:1]];
     [self.labelShortDescription setFont:[UIFont fontWithName:@"ArialMT" size:14.0f]];
     [self.labelShortDescription setNumberOfLines:2];
     self.labelShortDescription.text = coffeeObjectCurrentlyInUseByEntireClass.stringCoffeeDescription;

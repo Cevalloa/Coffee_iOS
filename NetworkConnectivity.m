@@ -66,7 +66,7 @@
 
 
         //Use for debugging
-//        NSLog(@"Returned data %@", dictionaryWithData);
+//       NSLog(@"Returned data %@", dictionaryWithData);
 //        NSLog(@"Returned response %@", response);
    
     }] resume];
@@ -84,6 +84,8 @@
     NSURL *url = [[NSURL alloc] initWithString:stringLinkingToImage];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    //We are connecting to wikipedia.. we don't need an HTTP authorization
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         NSData *data  = [[NSData alloc] initWithContentsOfURL:location];
