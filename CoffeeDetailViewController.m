@@ -7,6 +7,7 @@
 //
 
 #import "CoffeeDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "NetworkConnectivity.h"
 #import "CoffeeObject.h"
 
@@ -52,6 +53,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //Creates Bar Button Item In Navigation Bar
+    [self methodCreateBarButtonItem];
     
     //Sets Title label color to #666666 (Gray - Dark) & Font family
     self.labelWithCoffeeTitle = [UILabel new];
@@ -102,6 +106,20 @@
     //Sets the constraints for the views created
     [self methodAddConstraints];
 
+}
+
+#pragma mark - UIBarButtonItem Methods
+//Creates UIBarButtonItem in iOS 7 =<
+-(void)methodCreateBarButtonItem{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(10,0,60,30);
+    [button setTitle:@"Share" forState:UIControlStateNormal];
+    button.layer.borderColor = [UIColor whiteColor].CGColor;
+    button.layer.borderWidth = 2.0f;
+    
+    UIBarButtonItem *barbuttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    self.navigationItem.rightBarButtonItem = barbuttonItem;
 }
 
 #pragma mark - Autolayout Methods
